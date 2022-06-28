@@ -12,9 +12,11 @@
         from user
         where id = #{id}
     </select>
-<!--    countUserByUserName-->
+    <!--    countUserByUserName-->
     <select id="countUserByUserName" resultType="_integer">
-        select count(*) from user where username = #{username}
+        select count(*)
+        from user
+        where username = #{username}
     </select>
     <!--    login-->
     <select id="login" resultType="com.zzf.demox.entity.User">
@@ -33,4 +35,10 @@
         from USER
         where id = #{id}
     </delete>
+    <!--    getUserByUserName-->
+    <select id="getUserByUserName" resultType="com.zzf.demox.entity.User">
+        select *
+        from USER
+        where username = #{username}
+    </select>
 </mapper>

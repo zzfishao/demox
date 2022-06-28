@@ -18,6 +18,8 @@ public interface IUserService extends IService<User> {
 
     public List<User> getUserById(Integer id);
 
+    public User getUserByUserName(String username);
+
     public Integer getLogin(String username, String pwd);
 
     public Integer getSignUp(String username, String pwd);

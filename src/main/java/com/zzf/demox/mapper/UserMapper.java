@@ -28,4 +28,6 @@ public interface UserMapper extends BaseMapper<User> {
     Integer signUp(Map<String, Object> map);
 
     Integer deleteUserById(Integer id);
+
+    User getUserByUserName(String username);
 }
