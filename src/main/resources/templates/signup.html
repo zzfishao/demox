@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+</head>
+<body>
+<h1>SIGNUP</h1>
+<p>
+    <label>
+        username：<input type="text" name="username" id="username">
+    </label>
+</p>
+<p>
+    <label>
+        password：<input type="password" name="pwd" id="pwd">
+    </label>
+</p>
+<p>
+    <input type="button" value="返回登录" onclick="location.href='/login.html'">
+    <input type="button" value="注册" onclick="signup()">
+</p>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function signup() {
+        const username = document.getElementById("username").value;
+        const pwd = document.getElementById("pwd").value;
+
+        axios({
+            method:'get',
+            url:"/signup",
+            params:{
+                username,
+                pwd
+            }
+        }).then((res) => {
+            console.log(res);
+            if(res.data === 2){
+                location.href='/success.html';
+
+            }
+            else if(res.data === 1){
+                alert("用户名已存在！");
+            }
+            else{
+                alert("注册失败！")
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

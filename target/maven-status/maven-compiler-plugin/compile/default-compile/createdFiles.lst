@@ -1,0 +1,9 @@
+com\zzf\demox\controller\HelloController.class
+com\zzf\demox\controller\UserController.class
+com\zzf\demox\service\impl\UserServiceImpl.class
+com\zzf\demox\config\MyConfig.class
+com\zzf\demox\service\IUserService.class
+com\zzf\demox\entity\User.class
+com\zzf\demox\mbg\Mbg.class
+com\zzf\demox\mapper\UserMapper.class
+com\zzf\demox\DemoxApplication.class

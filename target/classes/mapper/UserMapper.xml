@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzf.demox.mapper.UserMapper">
+    <!--    selectAll-->
+    <select id="selectAll" resultType="com.zzf.demox.entity.User">
+        select *
+        from user
+    </select>
+    <!--    selectUserById-->
+    <select id="selectUserById" resultType="com.zzf.demox.entity.User">
+        select *
+        from user
+        where id = #{id}
+    </select>
+<!--    countUserByUserName-->
+    <select id="countUserByUserName" resultType="_integer">
+        select count(*) from user where username = #{username}
+    </select>
+    <!--    login-->
+    <select id="login" resultType="com.zzf.demox.entity.User">
+        select *
+        from user
+        where username = #{username}
+          and pwd = #{pwd}
+    </select>
+    <!--    signUp-->
+    <insert id="signUp">
+        insert into user value (null, #{username}, #{pwd}, null)
+    </insert>
+    <!--    deleteUserById-->
+    <delete id="deleteUserById">
+        delete
+        from USER
+        where id = #{id}
+    </delete>
+</mapper>
