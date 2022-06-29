@@ -25,7 +25,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Autowired
     UserMapper userMapper;
 
-    public List<User> getAllUser() {
+    public List<String> getAllUser() {
         return userMapper.selectAll();
     }
 

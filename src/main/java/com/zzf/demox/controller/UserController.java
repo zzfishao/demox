@@ -24,8 +24,8 @@ public class UserController {
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> getAll() {
-        return userService.getAllUser();
+    public String getAllUserName() {
+        return userService.getAllUser().toString();
     }
 
     @GetMapping("/select/{id}")
@@ -53,4 +53,6 @@ public class UserController {
     public String deleteUserById(@PathVariable Integer id) {
         return "delete id = " + id + (userService.deleteUserById(id) == 1 ? "Success!" : "Fail!");
     }
+
+
 }

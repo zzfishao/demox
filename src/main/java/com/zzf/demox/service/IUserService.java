@@ -14,7 +14,7 @@ import java.util.List;
  * @since 2022-06-26
  */
 public interface IUserService extends IService<User> {
-    public List<User> getAllUser();
+    public List<String> getAllUser();
 
     public List<User> getUserById(Integer id);
 
